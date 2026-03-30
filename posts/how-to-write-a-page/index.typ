@@ -1,11 +1,5 @@
 #import "../../config.typ": *
 
-#set page(height: auto, width: 24cm)
-#set text(16pt, font: ("IBM Plex Sans SC"), lang: "zh")
-#show raw: text.with(font: ("Zed Plex Mono", "IBM Plex Sans SC"))
-#show math.equation: set text(16pt)
-#set table(inset: 9pt)
-
 #show: template-post.with(
   title: "如何调整除了博客文章之外的页面",
   description: "本文主要介绍在 Carbon Typst Blog 中调整除了博客文章之外的页面（例如分类页、标签页、归档页等）的步骤和注意事项。",

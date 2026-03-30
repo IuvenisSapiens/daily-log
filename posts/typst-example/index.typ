@@ -4,12 +4,6 @@
 #import "@preview/cmarker:0.1.8"
 #import "@preview/mitex:0.2.6": *
 
-#set page(height: auto, width: 24cm)
-#set text(16pt, font: ("IBM Plex Sans SC"), lang: "zh")
-#show raw: text.with(font: ("Zed Plex Mono", "IBM Plex Sans SC"))
-#show math.equation: set text(16pt)
-#set table(inset: 9pt)
-
 #show: template-post.with(
   title: "Typst 功能展示",
   description: "本文主要展示了一些常用的 Typst 语法，并给出一些增强功能。",
@@ -164,7 +158,7 @@ Typst 内置了表格和代码块的支持，你可以通过 `#table` 和 #raw(l
 
 需要注意，由于 Typst 的 HTML 导出问题，页面上表格的宽度和对齐方式暂时无法调整。
 
-你也可以使用外部的图像库绘制图像，并通过 SVG 格式将它们嵌入到页面中（*需要将图像变量包裹在 `auto-frame` 函数中*）
+你也可以使用外部的图像库绘制图像，并通过 SVG 格式将它们嵌入到页面中（*需要将图像变量包裹在 `auto-frame` 函数中*）。默认情况下，SVG 在深色模式下会被反转颜色，如果你不希望它被反转，可以将 `auto-frame` 函数的 `disable-filter` 参数设置为 `true`。以下是一个使用 `lilaq` 库绘制二维函数图像的示例：
 
 ```typ
 #import "@preview/lilaq:0.5.0" as lq
@@ -179,7 +173,7 @@ Typst 内置了表格和代码块的支持，你可以通过 `#table` 和 #raw(l
     )
   )
 
-  figure(caption: [二维函数 $f(x, y) = x y$], auto-frame(diagram))
+  figure(caption: [二维函数 $f(x, y) = x y$], auto-frame(disable-filter: true, diagram))
 }
 ```
 
@@ -197,7 +191,7 @@ Typst 内置了表格和代码块的支持，你可以通过 `#table` 和 #raw(l
     )
   )
 
-  figure(caption: [二维函数 $f(x, y) = x y$], auto-frame(diagram))
+  figure(caption: [二维函数 $f(x, y) = x y$], auto-frame(disable-filter: true, diagram))
 }
 
 

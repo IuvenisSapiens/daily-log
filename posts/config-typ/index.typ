@@ -1,11 +1,5 @@
 #import "../../config.typ": *
 
-#set page(height: auto, width: 24cm)
-#set text(16pt, font: ("IBM Plex Sans SC"), lang: "zh")
-#show raw: text.with(font: ("Zed Plex Mono", "IBM Plex Sans SC"))
-#show math.equation: set text(16pt)
-#set table(inset: 9pt)
-
 #show: template-post.with(
   title: "配置文件说明",
   description: "本文主要介绍在 Carbon Typst Blog 中配置文件的作用和使用方法，以及如何通过配置文件来定制博客的外观和功能。",
@@ -73,8 +67,20 @@
 )
 
 // 从模板中提取出文章模板和页面模板，供博客文章和页面使用
-#let template-post = templates.post
 #let template-page = templates.page
+#let template-post(..args) = {
+  // 你可以在这里自定义 PDF 预览的效果
+  // 以下是一些示例设置，你可以根据需要进行调整
+  set page(height: auto, width: 30cm)
+  set text(16pt, font: ("IBM Plex Sans SC"), lang: "zh")
+  show raw: text.with(font: ("Zed Plex Mono", "IBM Plex Sans SC"))
+  show math.equation: set text(16pt)
+  set table(inset: 8pt)
+  set grid(inset: 8pt)
+
+  (templates.post)(..args)
+}
+
 ```
 
 其中，标签支持的颜色预设为：`gray`，`cool-gray`，`warm-gray`，`red`，`magenta`，`purple`，`blue`，`cyan`，`teal` 和 `green`。标签的图标应该是一个 SVG 图像的 URL 地址，你可以使用博客中提供的图标，也可以使用你自己的图标。你可以在 #link("https://carbondesignsystem.com/elements/icons/library/")[这个图标库] 中下载到符合 Carbon Design System 设计规范的 SVG 图标，或者使用其他来源的图标，只要它们是 SVG 格式的即可。你可以在定义标签选项时使用这些预设颜色，或者在 `lib/typ2html/tag.typ` 中自定义颜色信息。

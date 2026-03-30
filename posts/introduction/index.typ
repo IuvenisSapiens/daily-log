@@ -1,12 +1,6 @@
 #import "../../config.typ": *
 #import "@preview/lilaq:0.5.0" as lq
 
-#set page(height: auto, width: 24cm)
-#set text(16pt, font: ("IBM Plex Sans SC"), lang: "zh")
-#show raw: text.with(font: ("Zed Plex Mono", "IBM Plex Sans SC"))
-#show math.equation: set text(16pt)
-#set table(inset: 9pt)
-
 #show: template-post.with(
   title: "Carbon Typst Blog 介绍",
   description: "本文主要介绍 Carbon Typst Blog 的基本功能和配置方式。",

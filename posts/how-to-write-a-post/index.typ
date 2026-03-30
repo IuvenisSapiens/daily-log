@@ -1,11 +1,5 @@
 #import "../../config.typ": *
 
-#set page(height: auto, width: 24cm)
-#set text(16pt, font: ("IBM Plex Sans SC"), lang: "zh")
-#show raw: text.with(font: ("Zed Plex Mono", "IBM Plex Sans SC"))
-#show math.equation: set text(16pt)
-#set table(inset: 9pt)
-
 #show: template-post.with(
   title: "如何编写一篇博客文章",
   description: "本文主要介绍在 Carbon Typst Blog 中添加和编写博客文章的步骤和注意事项。",
@@ -49,28 +43,7 @@
 
 = PDF 预览
 
-除了通过 HTML 导出之外，Carbon Typst Blog 还支持通过 PDF 预览来查看你的博客文章。如果你需要调整 PDF 预览时的显示效果，需要在*引入依赖和引入模板*之间添加对应的 ```typ set``` 或 ```typ show``` 规则。本文使用的 PDF 预览设置如下：
-
-```typ
-#import "../../config.typ": *
-
-// 如果不希望 PDF 分页，可以设置页面高度为自动，并且设置宽度为适合阅读的尺寸
-#set page(height: auto, width: 24cm)、
-// 设置文本样式，确保在 PDF 预览中使用合适的字体和大小
-#set text(16pt, font: ("IBM Plex Sans SC"), lang: "zh")
-#show raw: text.with(font: ("Zed Plex Mono", "IBM Plex Sans SC"))
-// 设置数学公式的文本样式
-#show math.equation: set text(16pt)
-// 其他的个性化设置，例如表格的内边距
-#set table(inset: 9pt)
-
-#show: template-post.with(
-  title: "如何编写一篇博客文章",
-  description: "本文主要介绍在 Carbon Typst Blog 中添加和编写博客文章的步骤和注意事项。",
-  tags: ("Typst", "写作指南"),
-  date: datetime(year: 2026, month: 3, day: 18)
-)
-```
+除了通过 HTML 导出之外，Carbon Typst Blog 还支持通过 PDF 预览来查看你的博客文章。如果你需要调整 PDF 预览时的显示效果，请在 `config.typ` 中进行相应的修改。具体内容可以参考 #link("/posts/config-typ/")[配置文件说明]。
 
 需要注意，数学公式或 `auto-frame()` 包裹的图像都是通过 SVG 导出到 HTML 中的，因此其行为会和 PDF 上的渲染结果相符，字体大小、颜色等设置也会在 HTML 导出时生效。不过有一个例外：页面在选择暗色模式时，会*将图像的颜色反转*（使用的 CSS Filter 是 ` invert(1) hue-rotate(180deg)`）。
 
