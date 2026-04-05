@@ -52,5 +52,4 @@
 - IBM Plex Sans SC（字体）
 - #link("https://github.com/Yousa-Mirage/Tufted-Blog-Template")[Tufted Blog Template]
 
-相关名称、设计系统与字体的版权归其各自权利人所有；
-本项目仅在其许可条款允许范围内进行参考与使用。
+相关名称、设计系统与字体的版权归其各自权利人所有；本项目仅在其许可条款允许范围内进行参考与使用。

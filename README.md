@@ -36,3 +36,11 @@ Carbon Typst Blog 是一个基于 Typst 的静态博客生成器，旨在提供�
 ## 其他问题
 
 如果你对构建流程有任何疑问，或者在使用过程中遇到问题，可以参考博客指引文章，其中包含了更详细的说明和常见问题解答。此外，欢迎在 GitHub 仓库中提交 issue。
+
+## 参考资源
+
+本仓库在设计时参考了以下资源：
+
+- [IBM Plex 字体库](https://www.ibm.com/plex/)
+- [Carbon 设计系统](https://www.carbondesignsystem.com/)
+- [Tufted Blog Template](https://github.com/Yousa-Mirage/Tufted-Blog-Template)
