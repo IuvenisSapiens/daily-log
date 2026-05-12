@@ -1,4 +1,4 @@
-#import "@preview/theorion:0.4.1": *
+#import "@preview/theorion:0.6.0": *
 #import "html-guard.typ": html-guard
 
 #let quote(body) = context {
@@ -6,7 +6,7 @@
     html.div(class: "quote-block", {
       body
     })
-  }, fallback: () => quote-box(body))
+  }, fallback: () => quote-block(body))
 }
 
 #let block-title(title) = {
@@ -23,9 +23,9 @@
     })
   }, fallback: () => {
     if title == none {
-      note-box(body)
+      note-block(body)
     } else {
-      note-box(title: title, icon-name: "info", body)
+      note-block(title: title, icon-name: "info", body)
     }
   })
 }
@@ -38,9 +38,9 @@
     })
   }, fallback: () => {
     if title == none {
-      tip-box(body)
+      tip-block(body)
     } else {
-      tip-box(title: title, icon-name: "check-circle-fill", body)
+      tip-block(title: title, icon-name: "check-circle-fill", body)
     }
   })
 }
@@ -53,9 +53,9 @@
     })
   }, fallback: () => {
     if title == none {
-      warning-box(body)
+      warning-block(body)
     } else {
-      warning-box(title: title, icon-name: "alert-fill", body)
+      warning-block(title: title, icon-name: "alert-fill", body)
     }
   })
 }
@@ -69,9 +69,9 @@
     })
   }, fallback: () => {
     if title == none {
-      caution-box(body)
+      caution-block(body)
     } else {
-      caution-box(title: title, icon-name: "circle-slash", body)
+      caution-block(title: title, icon-name: "circle-slash", body)
     }
   })
 }

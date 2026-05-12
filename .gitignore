@@ -3,3 +3,4 @@ _site-preview/
 .vscode/
 .typ-blog-cache/
 node_modules/
+posts/log/

@@ -25,8 +25,8 @@
       html.elem("section", attrs: (role: "doc-endnotes"))[
         #html.hr()
         #html.ol({
-          for it in footnotes {
-            let number = counter(footnote).display(it.numbering)
+          for (i, it) in footnotes.enumerate() {
+            let number = str(i + 1)
             let fn-id = "fn-" + number
             let ref-id = "fnref-" + number
 
@@ -139,8 +139,10 @@
             head-extra
           }
 
-          html.link(rel: "preconnect", href: "https://cdn.jsdelivr.net")
+          html.link(rel: "preconnect", href: "https://cdn.jsdelivr.net", crossorigin: "anonymous")
           html.link(rel: "dns-prefetch", href: "https://cdn.jsdelivr.net")
+          html.link(rel: "preconnect", href: "https://events.vercount.one", crossorigin: "anonymous")
+          html.link(rel: "dns-prefetch", href: "https://events.vercount.one")
 
           make-theme-preload-script()
 
@@ -156,6 +158,12 @@
           for (js-src) in custom-script {
             html.script(type: "module", src: js-src)
           }
+
+          html.script(
+            defer: true,
+            type: "text/javascript",
+            src: "https://events.vercount.one/js"
+          )
         })
 
         html.body({
@@ -274,8 +282,7 @@
   title: "Carbon & Typst Blog",
   lang: "en",
   css: (
-    "https://cdn.jsdelivr.net/npm/@ibm/plex-sans@1.1.0/css/ibm-plex-sans-all.min.css",
-    "https://cdn.jsdelivr.net/npm/@ibm/plex-mono@1.1.0/css/ibm-plex-mono-all.min.css",
+    "/assets/core/font.css",
     "/assets/core/colors.css",
     "/assets/core/main.css",
     "/assets/core/pages.css",
@@ -339,8 +346,7 @@
   tag-options: (:),
 
   post-css: (
-    "https://cdn.jsdelivr.net/npm/@ibm/plex-sans@1.1.0/css/ibm-plex-sans-all.min.css",
-    "https://cdn.jsdelivr.net/npm/@ibm/plex-mono@1.1.0/css/ibm-plex-mono-all.min.css",
+    "/assets/core/font.css",
     "/assets/core/colors.css",
     "/assets/core/main.css",
   ),
@@ -351,8 +357,7 @@
   ),
 
   page-css: (
-    "https://cdn.jsdelivr.net/npm/@ibm/plex-sans@1.1.0/css/ibm-plex-sans-all.min.css",
-    "https://cdn.jsdelivr.net/npm/@ibm/plex-mono@1.1.0/css/ibm-plex-mono-all.min.css",
+    "/assets/core/font.css",
     "/assets/core/colors.css",
     "/assets/core/main.css",
     "/assets/core/pages.css",

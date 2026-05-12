@@ -1,8 +1,8 @@
 #import "../../config.typ": *
 #import "@preview/tablem:0.3.0": *
-#import "@preview/citegeist:0.2.0": load-bibliography
+#import "@preview/citegeist:0.2.2": load-bibliography
 #import "@preview/cmarker:0.1.8"
-#import "@preview/mitex:0.2.6": *
+#import "@preview/mitex:0.2.7": *
 
 #show: template-post.with(
   title: "Typst 功能展示",
@@ -179,7 +179,7 @@ Typst 内置了表格和代码块的支持，你可以通过 `#table` 和 #raw(l
 
 上述代码绘制了一个简单的二维函数图像，并通过 `figure` 函数创建了一个带有标题的内容块来展示它。对应的渲染效果如下：
 
-#import "@preview/lilaq:0.5.0" as lq
+#import "@preview/lilaq:0.6.0" as lq
 #{
   let diagram = lq.diagram(
     width: 4cm, height: 4cm,
